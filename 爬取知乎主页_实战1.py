@@ -59,7 +59,8 @@ def get_question_url():
 	doc = pq(r.text)
 	items = doc('.ContentItem-title').items()
 	question_url_list = []
-	question_url_dict = {}
+	#原本用的字典存储每个回答和对应网址，可以更清晰，但传给处理url的函数不方便索引，所以放弃，改用列表
+	#question_url_dict = {}
 	for item in items:
 		#print(item)
 		question = item.find('a').text()
